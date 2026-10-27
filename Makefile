@@ -177,7 +177,7 @@ proto-update-deps:
 ###                                Linting                                  ###
 ###############################################################################
 
-GOLANGCI_LINT_VERSION ?= v2.6.1
+GOLANGCI_LINT_VERSION ?= v2.14.0
 
 lint:
 	@echo "--> Running linter"

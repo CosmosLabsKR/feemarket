@@ -35,6 +35,9 @@ linters:
       - linters:
           - gosec
         text: Use of weak random number generator
+      - linters:
+          - goconst
+        path: _test\.go
     paths:
       - third_party$
       - builtin$

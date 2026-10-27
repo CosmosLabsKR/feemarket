@@ -5,6 +5,7 @@ import (
 
 	storetypes "github.com/cosmos/cosmos-sdk/store/v2/types"
 
+	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
 	"github.com/cosmos/cosmos-sdk/client"
@@ -47,7 +48,7 @@ type TestSuite struct {
 
 	AccountKeeper   feemarketante.AccountKeeper
 	FeeMarketKeeper *feemarketkeeper.Keeper
-	BankKeeper      feemarketante.BankKeeper
+	BankKeeper      bankkeeper.Keeper
 	FeeGrantKeeper  feemarketante.FeeGrantKeeper
 
 	MockBankKeeper     *mocks.BankKeeper
@@ -135,7 +136,7 @@ func SetupTestSuite(t *testing.T, mock bool) *TestSuite {
 }
 
 func (s *TestSuite) SetupHandlers(mock bool) {
-	bankKeeper := s.BankKeeper
+	var bankKeeper feemarketante.BankKeeper = s.BankKeeper
 	feeGrantKeeper := s.FeeGrantKeeper
 
 	if mock {

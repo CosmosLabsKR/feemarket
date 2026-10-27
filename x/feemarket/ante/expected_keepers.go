@@ -7,7 +7,6 @@ import (
 	"cosmossdk.io/core/address"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
 	feemarkettypes "github.com/skip-mev/feemarket/x/feemarket/types"
 )
@@ -43,8 +42,6 @@ type BankKeeper interface {
 	authtypes.BankKeeper
 	SendCoinsFromModuleToAccount(ctx context.Context, senderModule string, recipientAddr sdk.AccAddress, amt sdk.Coins) error
 	SendCoinsFromModuleToModule(ctx context.Context, senderModule, recipientModule string, amt sdk.Coins) error
-	ExportGenesis(ctx context.Context) *banktypes.GenesisState
-	InitGenesis(ctx context.Context, state *banktypes.GenesisState)
 }
 
 // FeeMarketKeeper defines the expected feemarket keeper.

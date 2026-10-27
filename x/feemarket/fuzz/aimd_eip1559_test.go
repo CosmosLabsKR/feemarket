@@ -106,7 +106,7 @@ func TestAIMDGasPrice(t *testing.T) {
 				// Calculate the new base gasPrice with the learning rate adjustment.
 				currentBlockSize := math.LegacyNewDecFromInt(math.NewIntFromUint64(state.Window[state.Index]))
 				targetBlockSize := math.LegacyNewDecFromInt(math.NewIntFromUint64(params.TargetBlockUtilization()))
-				utilization := (currentBlockSize.Sub(targetBlockSize)).Quo(targetBlockSize)
+				utilization := currentBlockSize.Sub(targetBlockSize).Quo(targetBlockSize)
 
 				// Truncate the learning rate adjustment to an integer.
 				//

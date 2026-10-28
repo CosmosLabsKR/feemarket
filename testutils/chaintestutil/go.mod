@@ -1,6 +1,6 @@
 module github.com/skip-mev/chaintestutil
 
-go 1.26.5
+go 1.26.10
 
 require (
 	cosmossdk.io/log/v2 v2.1.0

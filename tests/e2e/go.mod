@@ -1,6 +1,6 @@
 module github.com/skip-mev/feemarket/tests/e2e
 
-go 1.26.5
+go 1.26.10
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0

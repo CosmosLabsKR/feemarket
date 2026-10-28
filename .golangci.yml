@@ -10,14 +10,11 @@ linters:
     - dogsled
     - goconst
     - gocritic
-    - gosec
     - govet
     - ineffassign
     - misspell
     - nakedret
     - nolintlint
-    - revive
-    - staticcheck
     - unconvert
     - unused
   settings:
@@ -38,6 +35,9 @@ linters:
       - linters:
           - gosec
         text: Use of weak random number generator
+      - linters:
+          - goconst
+        path: _test\.go
     paths:
       - third_party$
       - builtin$

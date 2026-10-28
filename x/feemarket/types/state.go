@@ -58,7 +58,7 @@ func (s *State) UpdateBaseGasPrice(params Params) (gasPrice math.LegacyDec) {
 	// Calculate the new base gasPrice with the learning rate adjustment.
 	currentBlockSize := math.LegacyNewDecFromInt(math.NewIntFromUint64(s.Window[s.Index]))
 	targetBlockSize := math.LegacyNewDecFromInt(math.NewIntFromUint64(params.TargetBlockUtilization()))
-	utilization := (currentBlockSize.Sub(targetBlockSize)).Quo(targetBlockSize)
+	utilization := currentBlockSize.Sub(targetBlockSize).Quo(targetBlockSize)
 
 	// Truncate the learning rate adjustment to an integer.
 	//

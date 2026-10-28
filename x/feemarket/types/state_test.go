@@ -349,7 +349,7 @@ func TestState_UpdateBaseGasPrice(t *testing.T) {
 
 		expectedUtilization := math.LegacyMustNewDecFromStr("-0.5")
 		expectedLR := prevLR.Add(params.Alpha)
-		expectedLRAdjustment := (expectedLR.Mul(expectedUtilization)).Add(math.LegacyOneDec())
+		expectedLRAdjustment := expectedLR.Mul(expectedUtilization).Add(math.LegacyOneDec())
 
 		expectedNetUtilization := math.LegacyNewDec(-1 * int64(params.TargetBlockUtilization()) / 2)
 		deltaDiff := expectedNetUtilization.Mul(params.Delta)
@@ -379,7 +379,7 @@ func TestState_UpdateBaseGasPrice(t *testing.T) {
 
 		expectedUtilization := math.LegacyMustNewDecFromStr("0.5")
 		expectedLR := prevLR.Add(params.Alpha)
-		expectedLRAdjustment := (expectedLR.Mul(expectedUtilization)).Add(math.LegacyOneDec())
+		expectedLRAdjustment := expectedLR.Mul(expectedUtilization).Add(math.LegacyOneDec())
 
 		expectedNetUtilization := math.LegacyNewDec(int64(params.MaxBlockUtilization) / 4)
 		deltaDiff := expectedNetUtilization.Mul(params.Delta)
